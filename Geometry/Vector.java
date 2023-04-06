@@ -1,14 +1,14 @@
 package Geometry;
 
 public class Vector {
-    private double x;
-    private double y;
-    private double z;
-    private double radius;
-    private double theta;
-    private double phi;
-    private String label;
-    private String id;
+    protected double x;
+    protected double y;
+    protected double z;
+    protected double radius;
+    protected double theta;
+    protected double phi;
+    protected String label;
+    protected String id;
 
     /**
      * full constructor, with label, id and cartesian coordinates
@@ -187,14 +187,14 @@ public class Vector {
         radius = Math.sqrt(x*x + y*y + z*z);
 
         if(z == 0)
-            phi = Math.PI/2;
-        else
-            phi = Math.atan((x*x + y*y)/z);
-
-        if(x == 0)
             theta = Math.PI/2;
         else
-            theta = Math.atan(y/x);
+            theta = Math.atan(Math.sqrt(x*x + y*y)/z);
+
+        if(x == 0)
+            phi = 0.0;
+        else
+            phi = Math.atan(y/x);
     }
 
     /**
