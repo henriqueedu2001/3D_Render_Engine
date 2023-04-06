@@ -244,6 +244,21 @@ public class Vector {
     }
 
     /**
+     * multiplies the vector by a scalar
+     * @param V the vector tha will be multiplied
+     * @param scaling_factor the scaling factor of the multiplication
+     * @return the new scaled vector
+     */
+    public static Vector scaled(Vector V, double scaling_factor) {
+        Vector result = new Vector(
+            V.x*scaling_factor, 
+            V.y*scaling_factor, 
+            V.z*scaling_factor);
+
+        return result;
+    }
+
+    /**
      * evaluates the dot product of the Vectors A and B
      * @param A first Vector of the product
      * @param B second Vector of the product

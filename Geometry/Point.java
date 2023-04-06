@@ -86,7 +86,7 @@ public class Point {
         return label;
     }
 
-    public String showInfo() {
+    public String basic_info() {
         String info = "";
 
         info += "label: " + label + "\n";
@@ -148,6 +148,42 @@ public class Point {
      */
     public void set_id(String new_id) {
         id = new_id;
+    }
+
+    /**
+     * moves the point to a new position, by a displacement vector (delta_x, delta_y, delta_z)
+     * @param delta_x displacement in x
+     * @param delta_y displacement in y
+     * @param delta_z displacement in z
+     */
+    public void move(double delta_x, double delta_y, double delta_z) {
+        x += delta_x;
+        y += delta_y;
+        z += delta_z;
+    }
+
+    /**
+     * moves the x coordinate to a new position
+     * @param delta_x displacement in x
+     */
+    public void move_x(double delta_x) {
+        x += delta_x;
+    }
+
+    /**
+     * moves the y coordinate to a new position
+     * @param delta_y displacement in y
+     */
+    public void move_y(double delta_y) {
+        y += delta_y;
+    }
+
+    /**
+     * moves the z coordinate to a new position
+     * @param delta_z displacement in z
+     */
+    public void move_z(double delta_z) {
+        z += delta_z;
     }
     
 }
