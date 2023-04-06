@@ -148,7 +148,7 @@ public class Vector {
      * @param theta_coordinate
      * @param phi_coordinate
      */
-    public void set_cartesian_spherical(double radius_coordinate, double theta_coordinate, double phi_coordinate) {
+    public void set_spherical_coordinates(double radius_coordinate, double theta_coordinate, double phi_coordinate) {
         radius = radius_coordinate; theta = theta_coordinate; phi = phi_coordinate;
         compute_cartesian_coordinates();
     }
@@ -183,7 +183,7 @@ public class Vector {
     /**
      * evaluates the spherical coordinates, with the alredy registered cartesian coordinates
      */
-    private void compute_spherical_coordinates() {
+    protected void compute_spherical_coordinates() {
         radius = Math.sqrt(x*x + y*y + z*z);
 
         if(z == 0)
@@ -200,7 +200,7 @@ public class Vector {
     /**
      * evaluates the spherical cartesian, with the alredy registered spherical coordinates
      */
-    private void compute_cartesian_coordinates() {
+    protected void compute_cartesian_coordinates() {
         x = radius*Math.sin(theta)*Math.cos(phi);
         y = radius*Math.sin(theta)*Math.sin(phi);
         z = radius*Math.cos(theta);
